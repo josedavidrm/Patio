@@ -1,0 +1,219 @@
+
+body {
+
+background-color: #cfcfcf ;
+margin: 0;
+
+
+}
+
+.nombreP {
+
+color: rgb(0, 0, 0);
+margin: 15px 20px 15px 10px;
+padding: 0rem 0rem;
+font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 700;
+  font-style: normal;
+
+}
+
+header {
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0rem 0rem;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+background: linear-gradient(90deg, #fff , #8a3cca, #fff);
+
+}
+
+nav a {
+
+    
+    text-decoration: none;
+    color: var(--black);
+    margin: 0 1rem;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+
+}
+
+nav a:hover {
+
+    color: var(--blue-primary);
+
+}
+
+.infoP {
+font-size: 70px;
+text-align: center;
+margin: 15px 20px 15px 10px;
+padding: 1rem 2rem;
+font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+.VideoP {
+
+    display: inline-block;
+    width: 100%;
+    height: auto;
+
+}
+
+.imagen1 {
+
+    float: left;         
+  margin-left: 30px;   
+  margin-top: 20px;    
+  margin-right: 20px;  
+  border-radius: 10px;
+  width: 30rem;
+
+}
+
+.Descripcion1 {
+
+    
+    font-size: 30px;
+    text-align: justify;
+    margin: 15px 20px 15px 10px;
+    padding: 1rem 2rem;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 500;
+  font-style: normal;
+
+}
+
+.Descripcion2 {
+
+    font-size: 30px;
+    text-align: center;
+    margin: 15px 20px 15px 10px;
+    padding: 1rem 2rem;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 700;
+  font-style: normal;
+
+}
+
+.imagen2 {
+
+   float: right;         
+  margin-left: 30px;   
+  margin-top: 20px;    
+  margin-right: 20px;  
+  border-radius: 10px;
+  width: 30rem;
+
+}
+
+.descrip3{
+
+    font-size: 30px;
+    text-align: center;
+    margin: 15px 20px 15px 10px;
+    padding: 1rem 2rem;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 700;
+  font-style: normal;
+
+}
+
+.infoservicios {
+
+    font-size: 70px;
+    text-align: right;
+    margin: 15px 20px 15px 10px;
+    padding: 1rem 2rem;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 700;
+  font-style: normal;
+
+}
+
+.info-ubi {
+
+    font-size: 70px;
+    text-align: left;
+    margin: 15px 20px 15px 10px;
+    padding: 1rem 2rem;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 700;
+  font-style: normal;
+
+}
+
+.maps {
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.info-contacto {
+
+    font-size: 70px;
+    text-align: left;
+    margin: 15px 20px 15px 10px;
+    padding: 1rem 2rem;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 700;
+  font-style: normal;
+
+}
+
+.img-contacto {
+
+    float: right;         
+  margin-left: 30px;   
+  margin-top: 20px;    
+  margin-right: 20px;  
+  border-radius: 10px;
+  width: 30rem;
+
+}
+
+.descrip4{
+
+    font-size: 30px;
+    text-align: left;
+    margin: 15px 20px 15px 10px;
+    padding: 1rem 2rem;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 700;
+  font-style: normal;
+
+}
+
+.footer {
+
+    background-color: #8a3cca ;
+    text-align: center;
+    padding: 1rem 0rem;
+    color: white;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+    font-weight: 500;
+  font-style: normal;
+
+}
