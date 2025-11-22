@@ -174,9 +174,20 @@
 </html>
 <?php  
 
-
 $conexion = new mysqli("localhost", "root", "", "el_patio_margarita");
 
 if ($conexion->connect_error) {
     die("Error en la conexión: " . $conexion->connect_error);
+}
+
+if (isset($_POST['guardar'])) {
+    $nombre = $_POST['nombredelusuario'];
+    $usuario = $_POST['usuario'];
+    $email = $_POST['email'];
+    $nota = $_POST['nota'];
+    $fecha = date("Y-m-d H:i:s");
+
+    $sql = "INSERT INTO comentarios (nombredelusuario, usuario, email, nota, fechanota)
+            VALUES ('$nombre', '$usuario', '$email', '$nota', '$fecha')";
+    $conexion->query($sql);
 }
