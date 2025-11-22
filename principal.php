@@ -193,13 +193,36 @@ if (isset($_POST['guardar'])) {
 }
 
 if (isset($_GET['eliminar'])){
-    $id=$_GET['eliminar'];
+        $id=$_GET['eliminar'];
     $conexion->query("DELETE FROM comentarios WHERE id=$id");
 }
 
 if (isset($_POST['editar'])) {
-    $id = $_POST['id'];
+        $id = $_POST['id'];
      $notaNueva = $_POST['nota_editada'];
       $conexion->query("UPDATE comentarios SET nota='$notaNueva' WHERE id=$id");
 }
 ?>
+
+<h2 class="titulo-comentario">Agrega un comentario</h2>
+
+<div class="contenedor-comentario">
+
+    <form method="POST" class="form-comentario">
+
+        <label>Nombre y Apellido</label>
+        <input type="text" name="nombredelusuario" required>
+
+        <label>Usuario (Opcional)</label>
+        <input type="text" name="usuario">
+
+        <label>Correo electrónico</label>
+        <input type="email" name="email" required>
+
+        <label>Escribe tu comentario</label>
+        <textarea name="nota" required></textarea>
+
+        <button type="submit" name="guardar" class="btn-comentario">Enviar comentario</button>
+
+    </form>
+</div>
