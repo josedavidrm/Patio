@@ -163,6 +163,9 @@ if (isset($_POST['guardar'])) {
     $sql = "INSERT INTO comentarios (nombredelusuario, usuario, email, nota, fechanota)
             VALUES ('$nombre', '$usuario', '$email', '$nota', '$fecha')";
     $conexion->query($sql);
+
+    header("Location: principal.php");
+    exit();
 }
 
 
