@@ -172,3 +172,11 @@
                         
 
 </html>
+<?php  
+
+
+$conexion = new mysqli("localhost", "root", "", "el_patio_margarita");
+
+if ($conexion->connect_error) {
+    die("Error en la conexión: " . $conexion->connect_error);
+}
