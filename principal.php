@@ -139,40 +139,13 @@
                     <P style="color: aliceblue;" >.</P>
                     <P style="color: aliceblue;" >.</P>
                     <P style="color: aliceblue;" >.</P>
-
-
     
-
-                    <section>
-                        <nav>
-                            <div>
-
-                                <input type="Nombre y Apellido">
-                                <input type="Correo Electrónico">
-                                <textarea name="Agregar Nota" id=""></textarea>
-
-                            </div>
-                        </nav>
-
-
-
-                    </section>
-
-            
-    
-
-        
-                    <section>
-                        <div class="footer">
-                        <p>© 2024 El patio Margarita. Todos los derechos reservados.</p>
-                        </div>
-
-
-                    </section>
                         
 
 </html>
+
 <?php  
+
 
 $conexion = new mysqli("localhost", "root", "", "el_patio_margarita");
 
@@ -192,17 +165,22 @@ if (isset($_POST['guardar'])) {
     $conexion->query($sql);
 }
 
-if (isset($_GET['eliminar'])){
-        $id=$_GET['eliminar'];
+
+if (isset($_GET['eliminar'])) {
+    $id = $_GET['eliminar'];
     $conexion->query("DELETE FROM comentarios WHERE id=$id");
 }
 
+
 if (isset($_POST['editar'])) {
-        $id = $_POST['id'];
-     $notaNueva = $_POST['nota_editada'];
-      $conexion->query("UPDATE comentarios SET nota='$notaNueva' WHERE id=$id");
+    $id = $_POST['id'];
+    $notaNueva = $_POST['nota_editada'];
+
+    $conexion->query("UPDATE comentarios SET nota='$notaNueva' WHERE id=$id");
 }
 ?>
+
+
 
 <h2 class="titulo-comentario">Agrega un comentario</h2>
 
@@ -226,3 +204,52 @@ if (isset($_POST['editar'])) {
 
     </form>
 </div>
+
+<br><br>
+
+
+
+<section class="lista-comentarios">
+
+<?php
+$consulta = $conexion->query("SELECT * FROM comentarios ORDER BY id DESC");
+
+while ($fila = $consulta->fetch_assoc()):
+?>
+
+<div class="comentario-card">
+    <h3><?php echo $fila['nombredelusuario']; ?></h3>
+    <p class="usuario">@<?php echo $fila['usuario']; ?></p>
+    <p><?php echo $fila['nota']; ?></p>
+    <small><?php echo $fila['fechanota']; ?></small>
+
+    <div class="acciones">
+        <a class="btn-eliminar" href="?eliminar=<?php echo $fila['id']; ?>">Eliminar</a>
+
+        <button class="btn-editar" onclick="document.getElementById('edit_<?php echo $fila['id']; ?>').style.display='block'">
+            Editar
+        </button>
+    </div>
+
+
+    <div id="edit_<?php echo $fila['id']; ?>" class="editar-box">
+        <form method="POST">
+            <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
+            <textarea name="nota_editada" required><?php echo $fila['nota']; ?></textarea>
+            <button type="submit" name="editar">Guardar</button>
+        </form>
+    </div>
+
+</div>
+
+<?php endwhile; ?>
+
+</section>
+
+                    <section>
+                        <div class="footer">
+                        <p>© 2024 El patio Margarita. Todos los derechos reservados.</p>
+                        </div>
+
+
+                    </section>
