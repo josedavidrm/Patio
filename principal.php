@@ -191,3 +191,15 @@ if (isset($_POST['guardar'])) {
             VALUES ('$nombre', '$usuario', '$email', '$nota', '$fecha')";
     $conexion->query($sql);
 }
+
+if (isset($_GET['eliminar'])){
+    $id=$_GET['eliminar'];
+    $conexion->query("DELETE FROM comentarios WHERE id=$id");
+}
+
+if (isset($_POST['editar'])) {
+    $id = $_POST['id'];
+     $notaNueva = $_POST['nota_editada'];
+      $conexion->query("UPDATE comentarios SET nota='$notaNueva' WHERE id=$id");
+}
+?>
