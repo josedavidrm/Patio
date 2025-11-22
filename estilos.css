@@ -260,3 +260,27 @@ font-family: "Inter", sans-serif;
     color: #6c1bc4;
     font-weight: bold;
 }
+
+.comentario-card small {
+    color: gray;
+}
+
+.acciones {
+    margin-top: 8px;
+}
+
+.btn-eliminar {
+    color: red;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.btn-editar {
+    background: #4a0e99;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
