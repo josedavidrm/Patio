@@ -1,3 +1,51 @@
+<?php  
+
+
+$conexion = new mysqli("localhost", "root", "", "el_patio_margarita");
+
+if ($conexion->connect_error) {
+    die("Error en la conexión: " . $conexion->connect_error);
+}
+
+
+if (isset($_POST['guardar'])) {
+    $nombre = $_POST['nombredelusuario'];
+    $usuario = $_POST['usuario'];
+    $email = $_POST['email'];
+    $nota = $_POST['nota'];
+    $fecha = date("Y-m-d H:i:s");
+
+    $sql = "INSERT INTO comentarios (nombredelusuario, usuario, email, nota, fechanota)
+            VALUES ('$nombre', '$usuario', '$email', '$nota', '$fecha')";
+    $conexion->query($sql);
+
+    header("Location: principal.php"); 
+    exit();
+}
+
+
+if (isset($_GET['eliminar'])) {
+    $id = $_GET['eliminar'];
+    $conexion->query("DELETE FROM comentarios WHERE id=$id");
+    header("Location: principal.php");
+    exit();
+}
+
+
+if (isset($_POST['editar'])) {
+    $id = $_POST['id'];
+    $notaNueva = $_POST['nota_editada'];
+
+    $conexion->query("UPDATE comentarios SET nota='$notaNueva' WHERE id=$id");
+
+    header("Location: principal.php");
+    exit();
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 
 <html>
@@ -143,46 +191,6 @@
                         
 
 </html>
-
-<?php  
-
-
-$conexion = new mysqli("localhost", "root", "", "el_patio_margarita");
-
-if ($conexion->connect_error) {
-    die("Error en la conexión: " . $conexion->connect_error);
-}
-
-if (isset($_POST['guardar'])) {
-    $nombre = $_POST['nombredelusuario'];
-    $usuario = $_POST['usuario'];
-    $email = $_POST['email'];
-    $nota = $_POST['nota'];
-    $fecha = date("Y-m-d H:i:s");
-
-    $sql = "INSERT INTO comentarios (nombredelusuario, usuario, email, nota, fechanota)
-            VALUES ('$nombre', '$usuario', '$email', '$nota', '$fecha')";
-    $conexion->query($sql);
-
-    header("Location: principal.php");
-    exit();
-}
-
-
-if (isset($_GET['eliminar'])) {
-    $id = $_GET['eliminar'];
-    $conexion->query("DELETE FROM comentarios WHERE id=$id");
-}
-
-
-if (isset($_POST['editar'])) {
-    $id = $_POST['id'];
-    $notaNueva = $_POST['nota_editada'];
-
-    $conexion->query("UPDATE comentarios SET nota='$notaNueva' WHERE id=$id");
-}
-?>
-
 
 
 <h2 class="titulo-comentario">Agrega un comentario</h2>

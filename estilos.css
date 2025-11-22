@@ -284,3 +284,43 @@ font-family: "Inter", sans-serif;
     border-radius: 8px;
     font-size: 14px;
 }
+
+.editar-box {
+    background: #eee;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: none;
+}
+
+.form-comentario label {
+    font-size: 17px;        
+    font-weight: 700;
+    color: black;
+}
+
+.form-comentario input,
+.form-comentario textarea {
+    background: #4a0e99;
+    border: none;
+    border-radius: 8px;      
+    padding: 10px;           
+    color: white;
+    font-size: 15px;         
+}
+
+.form-comentario textarea {
+    height: 80px;            
+}
+
+.btn-comentario {
+    background: #4a0e99;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    width: 150px;           
+    align-self: center;
+    font-weight: 700;
+    font-size: 15px;
+}
